@@ -13,7 +13,7 @@ pipeline {
         stage('git clone') {
             steps {
                 script {
-                    sh "git clone git@adc.github.trendmicro.com:BA-PLS/subscription-api-qa.git"
+                    sh "git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git"
                 }
             }
         }
