@@ -14,6 +14,7 @@ pipeline {
                             cd ./QA/
                             ssh-keyscan adc.github.trendmicro.com >> ~/.ssh/known_hosts
                             git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git
+                            docker rm robotframework_data
                             docker create \
                             -v C:/Users/ext_stevensu/TrendMicro/QA/:/opt/robotframework/tests:Z \
                             -v C:/Users/ext_stevensu/TrendMicro/QA/reports/:/opt/robotframework/reports:Z \
