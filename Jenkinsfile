@@ -10,12 +10,12 @@ pipeline {
             steps {
                 catchError {
                     script {
-                        sh """rm -rf ./QA || echo "OK";
+                        sh """rm -rf ./QA || echo "OK"
                             mkdir -p ./QA/reports
                             cd ./QA/
                             ssh-keyscan adc.github.trendmicro.com >> ~/.ssh/known_hosts
                             git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git
-                            docker rm robotframework_data
+                            docker rm robotframework_data || echo "OK"
                             docker create \
                             -v C:\\Users\\ext_stevensu\\TrendMicro\\QA\\:/opt/robotframework/tests:Z \
                             -v C:\\Users\\ext_stevensu\\TrendMicro\\QA\\reports\\:/opt/robotframework/reports:Z \
