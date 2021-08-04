@@ -22,7 +22,7 @@ pipeline {
                             --name robotframework_data tell6530/robotframework:latest
                             docker run --rm \
                             --volumes-from robotframework_data \
-                            -e ROBOT_OPTIONS="-t http200-Create* -V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py" \
+                            -e ROBOT_OPTIONS="-V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py" \
                             tell6530/robotframework:latest"""
                     }
                 }
