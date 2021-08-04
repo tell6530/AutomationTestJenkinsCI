@@ -11,7 +11,7 @@ pipeline {
                 catchError {
                     script {
                         sh """mkdir -p ./QA/reports
-                            cd ./QA
+                            cd ./QA/
                             ssh-keyscan adc.github.trendmicro.com >> ~/.ssh/known_hosts
                             git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git
                             docker create \
