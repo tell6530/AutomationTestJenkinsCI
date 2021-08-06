@@ -17,12 +17,12 @@ pipeline {
                             git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git
                             docker rm robotframework_data || echo "OK"
                             docker create \
-                            -v "/:/opt/robotframework/tests:Z" \
-                            -v "/reports/:/opt/robotframework/reports:Z" \
+                            -v "/c/Users/ext_stevensu/TrendMicro/QA/:/opt/robotframework/tests:Z" \
+                            -v "/c/Users/ext_stevensu/TrendMicro/QA/reports/:/opt/robotframework/reports:Z" \
                             --name robotframework_data tell6530/robotframework:latest
                             docker run --rm \
                             --volumes-from robotframework_data \
-                            -e ROBOT_OPTIONS="-V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py" \
+                            -e ROBOT_OPTIONS="-t http200-Create* -V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py" \
                             tell6530/robotframework:latest"""
                     }
                 }
