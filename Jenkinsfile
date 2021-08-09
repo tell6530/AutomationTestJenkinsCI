@@ -18,7 +18,7 @@ pipeline {
                             sh 'ls /opt/robotframework/tests'
                             sh 'cp -r ${WORKSPACE}/QA/reports/* /opt/robotframework/reports'
                             sh 'ls /opt/robotframework/reports'
-                            sh 'robot -i RAT -V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py ./subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot'
+                            sh 'robot -i RAT -V /opt/robotframework/tests/subscription-api-qa/Variable/var_SubscriptionAPI_qa.py /opt/robotframework/tests/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot'
                         }
                     }
                 }
