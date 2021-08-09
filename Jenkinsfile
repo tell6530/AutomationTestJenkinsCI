@@ -14,7 +14,7 @@ pipeline {
                             rm -rf ./QA || echo "OK"
                             mkdir -p ./QA/reports
                             cd ./QA/
-                            ssh-keyscan adc.github.trendmicro.com >> ~/.ssh/known_hosts
+                            ssh-keyscan adc.github.trendmicro.com >> /var/jenkins_home/.ssh/known_hosts
                             git clone git@adc.github.trendmicro.com:ext-stevensu/subscription-api-qa.git
                             docker rm robotframework_data || echo "OK"
                             docker create \
