@@ -16,18 +16,8 @@ pipeline {
                             sh script:
                             """
                                 pwd
-                                cp -r ${WORKSPACE}/QA/* /opt/robotframework/tests
-                                ls /opt/robotframework/tests
-                                cp -r ${WORKSPACE}/QA/reports/* /opt/robotframework/reports
-                                ls /opt/robotframework/reports
-                                robot -i RAT -V /opt/robotframework/tests/subscription-api-qa/Variable/var_SubscriptionAPI_qa.py /opt/robotframework/tests/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot
+                                robot -i RAT -V ${WORKSPACE}/QA/subscription-api-qa/Variable/var_SubscriptionAPI_qa.py ${WORKSPACE}/QA/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot
                             """
-                            // sh 'pwd'
-                            // sh 'cp -r ${WORKSPACE}/QA/* /opt/robotframework/tests'
-                            // sh 'ls /opt/robotframework/tests'
-                            // sh 'cp -r ${WORKSPACE}/QA/reports/* /opt/robotframework/reports'
-                            // sh 'ls /opt/robotframework/reports'
-                            // sh 'robot -i RAT -V /opt/robotframework/tests/subscription-api-qa/Variable/var_SubscriptionAPI_qa.py /opt/robotframework/tests/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot'
                         }
                     }
                 }
