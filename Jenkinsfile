@@ -15,9 +15,9 @@ pipeline {
                         image_sdk.inside(){
                             sh 'pwd'
                             sh 'cp -r ${WORKSPACE}/QA /opt/robotframework/tests'
-                            sh 'ls /opt/robotframework/tests'
+                            sh 'ls /opt/robotframework/tests/QA'
                             sh 'cp -r ${WORKSPACE}/QA/reports /opt/robotframework/reports'
-                            sh 'ls /opt/robotframework/reports'
+                            sh 'ls /opt/robotframework/reports/reports'
                         }
                     }
                 }
