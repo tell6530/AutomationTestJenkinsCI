@@ -14,8 +14,8 @@ pipeline {
                         image_sdk.pull()
                         image_sdk.inside(){
                             sh 'pwd'
-                            sh 'cp ${WORKSPACE}/QA /opt/robotframework/tests'
-                            sh 'cp ${WORKSPACE}/QA/reports /opt/robotframework/reports'
+                            sh 'cp /c/Users/ext_stevensu/TrendMicro/QA /opt/robotframework/tests'
+                            sh 'cp /c/Users/ext_stevensu/TrendMicro/QA/reports /opt/robotframework/reports'
                         }
                     }
                 }
