@@ -16,7 +16,7 @@ pipeline {
                             sh
                             """
                                 pwd
-
+                                ls
                             """
                         }
                     }
