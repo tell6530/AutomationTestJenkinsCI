@@ -14,11 +14,11 @@ pipeline {
                         image_sdk.pull()
                         image_sdk.inside(){
                             sh 'pwd'
-                            sh 'cp -r ${WORKSPACE}/QA/ /opt/robotframework/tests'
+                            sh 'cp -r ${WORKSPACE}/QA/* /opt/robotframework/tests'
                             sh 'ls /opt/robotframework/tests'
-                            sh 'cp -r ${WORKSPACE}/QA/reports/ /opt/robotframework/reports'
+                            sh 'cp -r ${WORKSPACE}/QA/reports/* /opt/robotframework/reports'
                             sh 'ls /opt/robotframework/reports'
-                            // sh 'docker run '
+                            sh 'robot -i RAT -V ./subscription-api-qa/Variable/var_SubscriptionAPI_qa.py ./subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot'
                         }
                     }
                 }
