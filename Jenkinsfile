@@ -13,7 +13,9 @@ pipeline {
                         def image_sdk = docker.image('tell6530/robotframework:latest')
                         image_sdk.pull()
                         image_sdk.inside(){
-                            sh "pwd"
+                            sh 'pwd'
+                            sh 'cp ${WORKSPACE}/QA /opt/robotframework/tests'
+                            sh 'cp ${WORKSPACE}/QA/reports /opt/robotframework/reports'
                         }
                     }
                 }
