@@ -16,7 +16,7 @@ pipeline {
                             sh script:
                             """
                                 pwd
-                                robot -i RAT -V ${WORKSPACE}/QA/subscription-api-qa/Variable/var_SubscriptionAPI_qa.py ${WORKSPACE}/QA/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot
+                                robot -i RAT -V ${WORKSPACE}/QA/subscription-api-qa/Variable/var_SubscriptionAPI_dev.py ${WORKSPACE}/QA/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot
                             """
                         }
                     }
