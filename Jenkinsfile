@@ -1,7 +1,8 @@
 pipeline {
     agent any
     environment {
-        PROJECT_NAME = "Automation Test"
+        QA_PROJECT_NAME = "subscription-api-qa"
+        QA_PROJECT_AUTOMATIONTEST_VARIABLE = "var_SubscriptionAPI_dev"
     }
     stages {
         stage('build') {
@@ -12,7 +13,7 @@ pipeline {
         stage('automation test') {
             steps {
                 catchError {
-                    build job: 'Automation Test Single Job', parameters: [string(name: 'PROJECT_NAME',  value: "${PROJECT_NAME}")]
+                    build job: 'Automation Test Single Job', parameters: [string(name: 'QA_PROJECT_NAME',  value: "${QA_PROJECT_NAME}"), string(name: 'QA_PROJECT_AUTOMATIONTEST_VARIABLE',  value: "${QA_PROJECT_AUTOMATIONTEST_VARIABLE}")]
                 }
             }
         }
