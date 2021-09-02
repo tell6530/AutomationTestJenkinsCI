@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    environment {
+        PROJECT_NAME = "Automation Test"
+    }
     stages {
         stage('build') {
             steps {
@@ -9,17 +12,7 @@ pipeline {
         stage('automation test') {
             steps {
                 catchError {
-                    script {
-                        def image_sdk = docker.image('tell6530/robotframework:latest')
-                        image_sdk.pull()
-                        image_sdk.inside(){
-                            sh script:
-                            """
-                                pwd
-                                robot -i RAT -V ${WORKSPACE}/QA/subscription-api-qa/Variable/var_SubscriptionAPI_dev.py ${WORKSPACE}/QA/subscription-api-qa/Testcase/External/Get_company_entitlement_and_subscriptions.robot
-                            """
-                        }
-                    }
+                    build job: 'Automation Test Single Job', parameters: [string(name: 'PROJECT_NAME',  value: "${PROJECT_NAME}")]
                 }
             }
         }
